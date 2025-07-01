@@ -24,19 +24,14 @@ const Nav = () => {
         </div>
         <div className='hidden md:flex items-center space-x-3 text-[#8e8e8e]'>
           <p>fashe@example.com</p>
-          <select
-            name=""
-            id=""
-            className="border-none px-2 ring-offset-white focus:outline-none focus:ring-2 focus:ring-[#e65540] cursor-pointer"
-          >
-            <option value="EUR">EUR</option>
-            <option value="USD">USD</option>
-            <option value="GBP">GBP</option>
-            <option value="PKR">PKR</option>
-            <option value="CAD">CAD</option>
-            <option value="JPY">JPY</option>
+          <select name="" id="" className='border-none px-2 ring-offset-white'>
+            <option value="" className='focus:bg-[#e65540] hover:bg-[#e65540]'>EUR</option>
+            <option value="" className='focus:bg-[#e65540] hover:bg-[#e65540]'>USD</option>
+            <option value="" className='focus:bg-[#e65540] hover:bg-[#e65540]'>GBP</option>
+            <option value="" className='focus:bg-[#e65540] hover:bg-[#e65540]'>PKR</option>
+            <option value="" className='focus:bg-[#e65540] hover:bg-[#e65540]'>CAD</option>
+            <option value="" className='focus:bg-[#e65540] hover:bg-[#e65540]'>JPY</option>
           </select>
-
         </div>
       </div>
       <div className='flex justify-between px-[50px] items-center h-[80px]'>
