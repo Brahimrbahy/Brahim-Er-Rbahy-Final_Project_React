@@ -3,10 +3,9 @@ import React from 'react';
 const Login = () => {
     return (
         <>
-            <div className="container mx-auto max-w-[1300px] min-h-screen flex items-center justify-center">
-                <div className="flex gap-10 px-5">
-
-                    <div className="flex-1 max-w-[600px] border border-gray-300 p-8">
+            <div className="container mx-auto max-w-[1300px] min-h-screen flex items-center justify-center px-4">
+                <div className="flex flex-col md:flex-row gap-10 w-full max-w-[1200px]">
+                    <div className="flex-1 max-w-full md:max-w-[600px] border border-gray-300 p-8">
                         <h1 className="text-[32px] mb-4">New Customer</h1>
                         <h2 className="text-[15px] font-bold text-gray-600 mb-4">Register Account</h2>
                         <p className="text-[15px] font-normal text-gray-600 mb-6 leading-relaxed">
@@ -14,12 +13,12 @@ const Login = () => {
                             on an order's status, and keep track of the orders you have previously
                             made.
                         </p>
-                        <button className="bg-gray-800 hover:bg-[#e65540] transition-colors text-white text-xs uppercase py-3 px-6">
+                        <button className="bg-gray-800 hover:bg-[#e65540] transition-colors text-white text-xs uppercase py-3 px-6 w-full md:w-auto">
                             Continue
                         </button>
                     </div>
 
-                    <div className="flex-1 max-w-[600px] border border-gray-300 p-8">
+                    <div className="flex-1 max-w-full md:max-w-[600px] border border-gray-300 p-8">
                         <h1 className="text-[32px] mb-4">Returning Customer</h1>
                         <p className="text-[15px] text-gray-600 mb-6">I am a returning customer</p>
                         
@@ -37,11 +36,11 @@ const Login = () => {
                             Forgot your password?
                         </a>
                         
-                        <div className="flex items-center">
-                            <button className="bg-gray-800 hover:bg-[#e65540] transition-colors text-white text-xs uppercase py-3 px-6">
+                        <div className="flex flex-col md:flex-row items-center gap-4">
+                            <button className="bg-gray-800 hover:bg-[#e65540] transition-colors text-white text-xs uppercase py-3 px-6 w-full md:w-auto">
                                 Sign In
                             </button>
-                            <a href="#" className="text-[15px] text-gray-600 ml-4 hover:text-[#e65540] transition-colors">
+                            <a href="#" className="text-[15px] text-gray-600 hover:text-[#e65540] transition-colors">
                                 or Return to Store
                             </a>
                         </div>

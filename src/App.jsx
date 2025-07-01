@@ -5,6 +5,7 @@ import Nav from './Nav'
 import Home from './Home'
 import Footer from './Footer'
 import Contact from './Contact'
+import Login from './Login'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
 
       </Routes>
       <Footer />
