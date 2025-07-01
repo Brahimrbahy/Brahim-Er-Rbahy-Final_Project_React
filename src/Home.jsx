@@ -1,210 +1,154 @@
-// import React, { useState } from 'react';
-// import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-// import images from './constant/images';
-
-// const Home = () => {
-//     const [current, setCurrent] = useState(0);
-
-//     const prevSlide = () => {
-//         setCurrent(current === 0 ? 2 : current - 1);
-//     };
-
-//     const nextSlide = () => {
-//         setCurrent(current === 2 ? 0 : current + 1);
-//     };
-
-//     return (
-//         <div className="relative  w-full mx-auto overflow-hidden">
-//             {current === 0 && (
-//                 <div className="relative">
-//                     <img
-//                         src={images.carousel1}
-//                         alt="Slide 1"
-//                         className="w-full h-64 md:h-96 object-cover"
-//                     />
-//                     <div className="absolute inset-0 flex flex-col justify-center items-center bg-opacity-50 text-white p-4 text-center">
-//                         <p className="p-2 max-w-xl text-[18px]">
-//                             Women Collection 2018
-//                         </p>
-//                         <h2 className="text-[60px] font-[600] pb-5">
-//                             New arrivals
-//                         </h2>
-
-//                         <button className='rounded-[50px] w-[161px] h-[46px] bg-white text-black'>
-//                             Shop Now
-//                         </button>
-//                     </div>
-//                 </div>
-//             )}
-
-//             {current === 1 && (
-//                 <div className="relative">
-//                     <img
-//                         src={images.carousel2}
-//                         alt="Slide 2"
-//                         className="w-full h-64 md:h-96 object-cover"
-//                     />
-//                     <div className="absolute inset-0 flex flex-col justify-center items-center bg-opacity-50 text-white p-4 text-center">
-//                        <p className="p-2 max-w-xl text-[18px]">
-//                             Women Collection 2018
-//                         </p>
-//                         <h2 className="text-[60px] font-[600] pb-5">
-//                             New arrivals
-//                         </h2>
-
-//                         <button className='rounded-[50px] w-[161px] h-[46px] bg-white text-black'>
-//                             Shop Now
-//                         </button>
-//                     </div>
-//                 </div>
-//             )}
-
-//             {current === 2 && (
-//                 <div className="relative">
-//                     <img
-//                         src={images.carousel3}
-//                         alt="Slide 3"
-//                         className="w-full h-64 md:h-96 object-cover"
-//                     />
-//                     <div className="absolute inset-0 flex flex-col justify-center items-center  bg-opacity-50 text-white p-4 text-center">
-//                        <p className="p-2 max-w-xl text-[18px]">
-//                             Women Collection 2018
-//                         </p>
-//                         <h2 className="text-[60px] font-[600] pb-5">
-//                             New arrivals
-//                         </h2>
-
-//                         <button className='rounded-[50px] w-[161px] h-[46px] bg-white text-black'>
-//                             Shop Now
-//                         </button>
-//                     </div>
-//                 </div>
-//             )}
-
-//             <button
-//                 onClick={prevSlide}
-//                 className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black/60 rounded-full p-2 hover:bg-opacity-90 hover:bg-[#e65540] transition"
-//                 aria-label="Previous Slide"
-//             >
-//                 <FaChevronLeft color="white" />
-//             </button>
-//             <button
-//                 onClick={nextSlide}
-//                 className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black/60 rounded-full p-2 hover:bg-opacity-90 hover:bg-[#e65540] transition"
-//                 aria-label="Next Slide"
-//             >
-//                 <FaChevronRight color="white" />
-//             </button>
-//         </div>
-//     );
-// };
-
-// export default Home;
 import React, { useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import Database from './constant/data';
 import images from './constant/images';
 
 const Home = () => {
-    const [current, setCurrent] = useState(0);
+    const DataCarousel = Database.DataCarousel;
+    const mainSlidesCount = 3;
 
-    const prevSlide = () => {
-        setCurrent(current === 0 ? 2 : current - 1);
+    const [currentMain, setCurrentMain] = useState(0);
+
+    const itemsPerPage = 4;
+    const totalPages = Math.ceil(DataCarousel.length / itemsPerPage);
+    const [currentFeaturedIndex, setCurrentFeaturedIndex] = useState(0);
+
+    const prevMainSlide = () => {
+        setCurrentMain(currentMain === 0 ? mainSlidesCount - 1 : currentMain - 1);
     };
 
-    const nextSlide = () => {
-        setCurrent(current === 2 ? 0 : current + 1);
+    const nextMainSlide = () => {
+        setCurrentMain(currentMain === mainSlidesCount - 1 ? 0 : currentMain + 1);
+    };
+
+    const prevFeaturedSlide = () => {
+        setCurrentFeaturedIndex((prev) => (prev === 0 ? totalPages - 1 : prev - 1));
+    };
+
+    const nextFeaturedSlide = () => {
+        setCurrentFeaturedIndex((prev) => (prev === totalPages - 1 ? 0 : prev + 1));
     };
 
     return (
-        <><div className="relative w-full mx-auto overflow-hidden">
-            {current === 0 && (
-                <div className="relative h-[70vh]">
-                    <img
-                        src={images.carousel1}
-                        alt="Slide 1"
-                        className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 flex flex-col justify-center items-center bg-opacity-50 text-white p-4 text-center">
-                        <p className="p-2 max-w-xl text-[18px]">
-                            Women Collection 2018
-                        </p>
-                        <h2 className="text-[60px] font-[600] pb-5">
-                            New arrivals
-                        </h2>
-
-                        <button className="rounded-[50px] w-[161px] h-[46px] bg-white text-black">
-                            Shop Now
-                        </button>
+        <>
+            <div className="relative w-full mx-auto overflow-hidden">
+                {currentMain === 0 && (
+                    <div className="relative h-[70vh]">
+                        <img
+                            src={images.carousel1}
+                            alt="Slide 1"
+                            className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 flex flex-col justify-center items-center bg-opacity-50 text-white p-4 text-center">
+                            <p className="p-2 max-w-xl text-[18px]">Women Collection 2025</p>
+                            <h2 className="text-[60px] font-[600] pb-5">New arrivals</h2>
+                            <button className="rounded-[50px] w-[161px] h-[46px] bg-white text-black">
+                                Shop Now
+                            </button>
+                        </div>
                     </div>
-                </div>
-            )}
-
-            {current === 1 && (
-                <div className="relative h-[70vh]">
-                    <img
-                        src={images.carousel2}
-                        alt="Slide 2"
-                        className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 flex flex-col justify-center items-center  bg-opacity-50 text-white p-4 text-center">
-                        <p className="p-2 max-w-xl text-[18px]">
-                            Women Collection 2018
-                        </p>
-                        <h2 className="text-[60px] font-[600] pb-5">
-                            New arrivals
-                        </h2>
-
-                        <button className="rounded-[50px] w-[161px] h-[46px] bg-white text-black">
-                            Shop Now
-                        </button>
+                )}
+                {currentMain === 1 && (
+                    <div className="relative h-[70vh]">
+                        <img
+                            src={images.carousel2}
+                            alt="Slide 2"
+                            className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 flex flex-col justify-center items-center bg-opacity-50 text-white p-4 text-center">
+                            <p className="p-2 max-w-xl text-[18px]">Women Collection 2025</p>
+                            <h2 className="text-[60px] font-[600] pb-5">New arrivals</h2>
+                            <button className="rounded-[50px] w-[161px] h-[46px] bg-white text-black">
+                                Shop Now
+                            </button>
+                        </div>
                     </div>
-                </div>
-            )}
-
-            {current === 2 && (
-                <div className="relative h-[70vh]">
-                    <img
-                        src={images.carousel3}
-                        alt="Slide 3"
-                        className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 flex flex-col justify-center items-center  bg-opacity-50 text-white p-4 text-center">
-                        <p className="p-2 max-w-xl text-[18px]">
-                            Women Collection 2018
-                        </p>
-                        <h2 className="text-[60px] font-[600] pb-5">
-                            New arrivals
-                        </h2>
-
-                        <button className="rounded-[50px] w-[161px] h-[46px] bg-white text-black">
-                            Shop Now
-                        </button>
+                )}
+                {currentMain === 2 && (
+                    <div className="relative h-[70vh]">
+                        <img
+                            src={images.carousel3}
+                            alt="Slide 3"
+                            className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 flex flex-col justify-center items-center bg-opacity-50 text-white p-4 text-center">
+                            <p className="p-2 max-w-xl text-[18px]">Women Collection 2025</p>
+                            <h2 className="text-[60px] font-[600] pb-5">New arrivals</h2>
+                            <button className="rounded-[50px] w-[161px] h-[46px] bg-white text-black">
+                                Shop Now
+                            </button>
+                        </div>
                     </div>
+                )}
+
+                <button
+                    onClick={prevMainSlide}
+                    className="absolute top-1/2 left-2 transform -translate-y-1/2 rounded-full p-2 hover:bg-opacity-90 hover:bg-[#e65540] transition"
+                    aria-label="Previous Slide"
+                >
+                    <FaChevronLeft color="white" />
+                </button>
+                <button
+                    onClick={nextMainSlide}
+                    className="absolute top-1/2 right-5 transform -translate-y-1/2 rounded-full p-2 hover:bg-opacity-90 hover:bg-[#e65540] transition"
+                    aria-label="Next Slide"
+                >
+                    <FaChevronRight color="white" />
+                </button>
+            </div>
+
+            <div className="py-20 ">
+                <h3 className="text-4xl font-semibold pb-4 text-center">FEATURED PRODUCTS</h3>
+                <div className="relative w-4/5 max-w-6xl  overflow-hidden  mx-auto">
+                    <div
+                        className="flex transition-transform duration-500 ease-in-out   "
+                        style={{ transform: `translateX(-${currentFeaturedIndex * 100}%)` }}
+                    >
+                        {DataCarousel.map((item, i) => (
+                            <div
+                                key={item.id || i}
+                                className="flex-shrink-0 p-2 w-full lg:w-1/4"
+                            >
+                                <img
+                                    src={images[item.img]}
+                                    alt={item.title || `Featured ${i + 1}`}
+                                    className="rounded-lg w-full"
+                                />
+                                <div className="pt-2 ">
+                                    <p className="text-sm text-gray-600 font-medium">{item.description}</p>
+                                    <p className="text-xl font-bold text-gray-600"> {item.price}$</p>
+                                    <p className="text-sm text-gray-600 line-through">{item.sold}</p>
+                                </div>
+                            </div>
+
+                        ))}
+                    </div>
+
+                    <button
+                        onClick={prevFeaturedSlide}
+                        className="absolute top-1/2 left-1 -translate-y-1/2  bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-80"
+                        aria-label="Previous Featured Slide"
+                    >
+                        <FaChevronLeft color='gery' size={24} />
+
+                    </button>
+                    <button
+                        onClick={nextFeaturedSlide}
+                        className="absolute top-1/2 right-1 -translate-y-1/2  bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-80"
+                        aria-label="Next Featured Slide"
+                    >
+                        <FaChevronRight color='gery' size={24} />
+                    </button>
                 </div>
-            )}
+            </div>
+            <div className='bg-[#f2f2f2] h-[540px] flex '>
+                <div className='h-[400px]'>
 
-            <button
-                onClick={prevSlide}
-                className="absolute top-1/2 left-2 transform -translate-y-1/2  rounded-full p-2 hover:bg-opacity-90 hover:bg-[#e65540] transition"
-                aria-label="Previous Slide"
-            >
-                <FaChevronLeft color="white" />
-            </button>
-            <button
-                onClick={nextSlide}
-                className="absolute top-1/2 right-2 transform -translate-y-1/2  rounded-full p-2 hover:bg-opacity-90 hover:bg-[#e65540] transition"
-                aria-label="Next Slide"
-            >
-                <FaChevronRight color="white" />
-            </button>
-        </div>
+                </div>
+                <div className='h-[400px]'>
 
-        {/* mt9isschdb */}
-            {/* <div>
-
-               
-
-            </div> */}
+                </div>
+            </div>
         </>
     );
 };
