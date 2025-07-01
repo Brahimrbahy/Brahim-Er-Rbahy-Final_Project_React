@@ -141,14 +141,34 @@ const Home = () => {
                     </button>
                 </div>
             </div>
-            <div className='bg-[#f2f2f2] h-[540px] flex '>
-                <div className='h-[400px]'>
+            <div className="bg-[#f2f2f2] h-[540px] flex gap-5 p-5">
+                <div className="h-[400px] flex-shrink-0 w-[40%] Relative">
+                    <img
+                        src={images.bn8}
+                        alt="Banner"
+                        className="h-full w-auto object-contain"
+                    />
+                    <div className='Absolute bottom-10'>
+                        <p>The Beauty</p>
+                        <h3>Lookbook</h3>
+                        <p>View Collection</p>
 
+                    </div>
                 </div>
-                <div className='h-[400px]'>
+                <div className=" w-[40%] flex-1 h-[400px] bg-white flex flex-col justify-center items-center ">
+                    <img src={images.gls} alt="" className="w-100 h-auto object-contain" />
+                    <p className="text-lg font-semibold">Boxy2 T-Shirt with Roll Sleeve</p>
+                    <p className="text-xl  font-bold">$20.00</p>
+                    <div className="flex space-x-1">
+                        <div className="w-4 h-4 bg-yellow-400  "></div>
+                        <div className="w-4 h-4 bg-yellow-400  "></div>
+                        <div className="w-4 h-4 bg-yellow-400  "></div>
+                        <div className="w-4 h-4 bg-yellow-400  "></div>
+                    </div>
+                </div>
 
-                </div>
             </div>
+
         </>
     );
 };

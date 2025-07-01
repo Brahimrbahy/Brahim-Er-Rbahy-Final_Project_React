@@ -12,6 +12,10 @@ import c5 from "../assets/images/shopy5.webp";
 import c6 from "../assets/images/shopy6.webp";
 import c7 from "../assets/images/shopy7.webp";
 import c8 from "../assets/images/shopy8.webp";
+import bn8 from "../assets/images/banner-08.jpg";
+import gls from "../assets/images/shop-item-09.jpg";
+import topweb from "../assets/images/contact_top.webp"
+
 
 export default {
   logo,
@@ -26,4 +30,8 @@ export default {
   c6,
   c7,
   c8,
+  bn8,
+  gls,
+  topweb,
+
 };
