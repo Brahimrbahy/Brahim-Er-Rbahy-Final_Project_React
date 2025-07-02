@@ -4,11 +4,16 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Database from './constant/data';
 import images from './constant/images';
 import blogData from './json/blog.json';
+import { FaAnglesUp } from 'react-icons/fa6';
+import { Link } from 'react-router';
 
 const Home = () => {
     const DataCarousel = Database.DataCarousel;
     const mainSlidesCount = 3;
     const [seconds, setSeconds] = useState(10);
+    const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -264,6 +269,13 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <Link to="/">
+            <div onClick={scrollToTop} className='bg-white/10 backdrop-blur-md border border-white/20 w-12 h-12 fixed z-50 bottom-10 right-10 rounded-xl flex items-center justify-center shadow-lg cursor-pointer hover:bg-[#e65540] '>
+                <button ><FaAnglesUp />
+                </button>
+            </div>
+            </Link>
+            
 
         </>
     );
