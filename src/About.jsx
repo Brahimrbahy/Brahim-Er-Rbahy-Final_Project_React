@@ -12,7 +12,7 @@ const About = () => {
                     <img
                         src={images.c3}
                         alt=""
-                        className="w-full h-auto  object-cover max-h-[500px]"
+                        className="w-full h-auto  object-cover max-h-[500px] "
                     />
                 </div>
 
