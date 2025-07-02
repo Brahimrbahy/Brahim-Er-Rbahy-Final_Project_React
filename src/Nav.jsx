@@ -13,18 +13,20 @@ const Nav = () => {
   return (
     <nav className='flex flex-col w-full'>
 
-      <div className='flex items-center justify-between bg-[#f5f5f5] px-4 md:px-9 '>
-        <div className='hidden md:flex items-center text-[#8e8e8e]'>
+      <div className='hidden md:flex items-center justify-between bg-[#f5f5f5]  '>
+        <div className='flex items-center text-[#8e8e8e]'>
           <Link to="/" className='hover:text-[#e65540] p-[10px]'><FaFacebookF size={18} /></Link>
           <Link to="/" className='hover:text-[#e65540] p-[10px]'><FaTwitter size={18} /></Link>
           <Link to="/" className='hover:text-[#e65540] p-[10px]'><FaPinterestSquare size={18} /></Link>
           <Link to="/" className='hover:text-[#e65540] p-[10px]'><FaGooglePlusG size={18} /></Link>
           <Link to="/" className='hover:text-[#e65540] p-[10px]'><FaInstagram size={18} /></Link>
         </div>
-        <p className='text-xs md:text-sm text-[#8e8e8e] text-center'>
+
+        <p className='text-sm text-[#8e8e8e] text-center'>
           Free shipping for standard order over $100
         </p>
-        <div className='hidden md:flex items-center space-x-3 text-[#8e8e8e]'>
+
+        <div className='flex items-center space-x-3 text-[#8e8e8e]'>
           <p className='text-sm'>fashe@example.com</p>
           <select className='border-none px-2 text-sm bg-transparent'>
             <option value="EUR">EUR</option>
@@ -36,6 +38,8 @@ const Nav = () => {
           </select>
         </div>
       </div>
+
+
 
       <div className='flex items-center justify-between px-4 md:px-[50px] h-[80px]'>
         <Link to="/">

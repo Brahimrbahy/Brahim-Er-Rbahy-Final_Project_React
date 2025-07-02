@@ -1,0 +1,76 @@
+[
+    {
+        "id": 1,
+        "image": "c1",
+        "name": "Boxy7 T-Shirt with Roll Sleeve",
+        "price": 20.0,
+        "bestSeller": true,
+        "featured": false,
+        "sale": false
+    },
+    {
+        "id": 2,
+        "image": "c2",
+        "name": "Boxy6 T-Shirt black Roll Sleeve ",
+        "price": 20.0,
+        "bestSeller": true,
+        "featured": false,
+        "sale": false
+    },
+    {
+        "id": 3,
+        "image": "c3",
+        "name": "Boxy5 T-Shirt yellow Roll Sleeve",
+        "price": 20.0,
+        "bestSeller": true,
+        "featured": false,
+        "sale": false
+    },
+    {
+        "id": 4,
+        "image": "c4",
+        "name": "Boxy4 T-Shirt red Roll Sleeve",
+        "price": 20.0,
+        "bestSeller": true,
+        "featured": false,
+        "sale": false
+    },
+    {
+        "id": 5,
+        "image": "c5",
+        "name": "Boxy3 T-Shirt kork Roll Sleeve",
+        "price": 20.0,
+        "oldPrice": 30.0,
+        "bestSeller": false,
+        "featured": false,
+        "sale": true
+    },
+    {
+        "id": 6,
+        "image": "c6",
+        "name": "Boxy2 T-Shirt free Roll Sleeve",
+        "price": 20.0,
+        "bestSeller": false,
+        "featured": false,
+        "home": true,
+        "sale": false
+    },
+    {
+        "id": 7,
+        "image": "c7",
+        "name": "Boxy1 T-Shirt test Roll Sleeve",
+        "price": 20.0,
+        "bestSeller": false,
+        "featured": true,
+        "sale": false
+    },
+    {
+        "id": 8,
+        "image": "c8",
+        "name": "Boxy T-Shirt mial Sleeve Detail",
+        "price": 20.0,
+        "bestSeller": false,
+        "featured": false,
+        "sale": false
+    }
+]

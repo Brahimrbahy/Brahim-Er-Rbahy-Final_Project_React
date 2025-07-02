@@ -15,6 +15,7 @@ import c8 from "../assets/images/shopy8.webp";
 import bn8 from "../assets/images/banner-08.jpg";
 import gls from "../assets/images/shop-item-09.jpg";
 import topweb from "../assets/images/contact_top.webp"
+import banner from "../assets/images/banner.webp";
 
 
 export default {
@@ -33,5 +34,6 @@ export default {
   bn8,
   gls,
   topweb,
+  banner
 
 };
