@@ -53,7 +53,7 @@ const Nav = () => {
           </button>
         </div>
 
-        <ul className={`flex-col md:flex-row md:flex items-center gap-4 md:gap-0 absolute md:static left-0 top-[80px] bg-white md:bg-transparent w-full md:w-auto px-4 md:px-0 transition-all duration-300 z-10 ${isOpen ? 'flex' : 'hidden'}`}>
+        <ul className={`flex-col md:flex-row md:flex items-center gap-4 md:gap-0 absolute md:static left-0 top-[80px] bg-white md:bg-transparent max-sm:bg-red-500 max-sm:gap-0 max-sm:text-white max-sm:items-start w-full md:w-auto px-4 md:px-0 transition-all duration-300 z-10 ${isOpen ? 'flex' : 'hidden'}`}>
           <Link to="/">
             <li className="px-[15px] py-[20px] hover:text-[#e65540] text-center cursor-pointer transition-all duration-200">
               Home
