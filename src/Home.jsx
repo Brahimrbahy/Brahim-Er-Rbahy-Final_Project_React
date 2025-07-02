@@ -12,8 +12,8 @@ const Home = () => {
     const mainSlidesCount = 3;
     const [seconds, setSeconds] = useState(10);
     const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -57,9 +57,12 @@ const Home = () => {
                         <div className="absolute inset-0 flex flex-col justify-center items-center bg-opacity-50 text-white p-4 text-center">
                             <p className="p-2 max-w-xl text-[18px]">Women Collection 2025</p>
                             <h2 className="text-[60px] font-[600] pb-5">New arrivals</h2>
-                            <button className="rounded-[50px] w-[161px] h-[46px] bg-white text-black">
-                                Shop Now
-                            </button>
+                            <Link to="/shop">
+                                <button className="rounded-[50px] w-[161px] h-[46px] bg-white text-black">
+                                    Shop Now
+                                </button>
+                            </Link>
+
                         </div>
                     </div>
                 )}
@@ -270,12 +273,12 @@ const Home = () => {
                 </div>
             </div>
             <Link to="/">
-            <div onClick={scrollToTop} className='bg-white/10 backdrop-blur-md border border-white/20 w-12 h-12 fixed z-50 bottom-10 right-10 rounded-xl flex items-center justify-center shadow-lg cursor-pointer hover:bg-[#e65540] '>
-                <button ><FaAnglesUp />
-                </button>
-            </div>
+                <div onClick={scrollToTop} className='bg-white/10 backdrop-blur-md border border-white/20 w-12 h-12 fixed z-50 bottom-10 right-10 rounded-xl flex items-center justify-center shadow-lg cursor-pointer hover:bg-[#e65540] '>
+                    <button ><FaAnglesUp />
+                    </button>
+                </div>
             </Link>
-            
+
 
         </>
     );
